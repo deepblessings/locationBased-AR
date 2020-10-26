@@ -66,19 +66,18 @@
         }
     </script>
       
-        <a-scene
-        vr-mode-ui="enabled: false"
-        embedded
-        arjs="sourceType: webcam; debugUIEnabled: true;"
-      >
-        <a-text
-          value="This content will always face you."
-          look-at="[gps-camera]"
-          scale="50 50 50"
-          gps-entity-place="latitude: -13.9577419; longitude: 33.8142675;"
-        ></a-text>
-        <a-camera gps-camera rotation-reader> </a-camera>
-      </a-scene> 
+       <a-scene>
+    <a-text
+        value="This content will always face you." 
+        id="house"
+        
+    ></a-text>
+
+    <a-marker preset="hiro">
+        <a-entity gltf-model="#house" scale="0.009 0.009 0.009" position="0 0 0" rotation="0 90 5"></a-entity>
+    </a-marker>
+    <a-entity camera rotation-reader></a-entity>
+  </a-scene>
          
 
   </body>
